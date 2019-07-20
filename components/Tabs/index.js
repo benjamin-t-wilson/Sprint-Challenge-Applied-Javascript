@@ -30,7 +30,7 @@ function TabBuilder(obj) {
 window.setTimeout(() => {
   let tabsList = document.querySelectorAll(".tab");
   tabsList.forEach(cv => {
-    if (cv.textContent.includes("javscript")) {
+    if (cv.textContent.includes("javascript")) {
       cv.dataset.tab = "javascript";
     }
     if (cv.textContent.includes("bootstrap")) {
