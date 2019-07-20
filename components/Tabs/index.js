@@ -45,5 +45,18 @@ window.setTimeout(() => {
     if (cv.textContent.includes("node")) {
       cv.dataset.tab = "node";
     }
+    cv.addEventListener("click", () => {
+      tabsList.forEach(cv => {
+        cv.classList.remove("active-tab");
+      });
+      cv.classList.add("active-tab");
+      let cardsList = document.querySelectorAll(".card");
+      cardsList.forEach(av => {
+        av.style.display = "inline-block";
+        if (av.dataset.tab != cv.dataset.tab) {
+          av.style.display = "none";
+        }
+      });
+    });
   });
 }, 3000);
