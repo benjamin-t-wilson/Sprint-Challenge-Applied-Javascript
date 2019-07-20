@@ -26,3 +26,24 @@ function TabBuilder(obj) {
   div.textContent = obj;
   topics.appendChild(div);
 }
+
+window.setTimeout(() => {
+  let tabsList = document.querySelectorAll(".tab");
+  tabsList.forEach(cv => {
+    if (cv.textContent.includes("javscript")) {
+      cv.dataset.tab = "javascript";
+    }
+    if (cv.textContent.includes("bootstrap")) {
+      cv.dataset.tab = "bootstrap";
+    }
+    if (cv.textContent.includes("technology")) {
+      cv.dataset.tab = "technology";
+    }
+    if (cv.textContent.includes("jquery")) {
+      cv.dataset.tab = "jquery";
+    }
+    if (cv.textContent.includes("node")) {
+      cv.dataset.tab = "node";
+    }
+  });
+}, 3000);
