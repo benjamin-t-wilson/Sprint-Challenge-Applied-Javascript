@@ -21,7 +21,6 @@
 let infoRequest = axios
   .get("https://lambda-times-backend.herokuapp.com/articles")
   .then(response => {
-    console.log(Object.keys(response.data.articles));
     Object.keys(response.data.articles).forEach(cv => {
         return new cardComp(response.data.articles[cv], cv);
     });
