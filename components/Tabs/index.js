@@ -30,21 +30,7 @@ function TabBuilder(obj) {
 window.setTimeout(() => {
   let tabsList = document.querySelectorAll(".tab");
   tabsList.forEach(cv => {
-    if (cv.textContent.includes("javascript")) {
-      cv.dataset.tab = "javascript";
-    }
-    if (cv.textContent.includes("bootstrap")) {
-      cv.dataset.tab = "bootstrap";
-    }
-    if (cv.textContent.includes("technology")) {
-      cv.dataset.tab = "technology";
-    }
-    if (cv.textContent.includes("jquery")) {
-      cv.dataset.tab = "jquery";
-    }
-    if (cv.textContent.includes("node")) {
-      cv.dataset.tab = "node";
-    }
+    cv.dataset.tab = cv.textContent;
     cv.addEventListener("click", () => {
       tabsList.forEach(cv => {
         cv.classList.remove("active-tab");

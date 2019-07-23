@@ -22,21 +22,7 @@ let infoRequest = axios
   .get("https://lambda-times-backend.herokuapp.com/articles")
   .then(response => {
     Object.keys(response.data.articles).forEach(cv => {
-      if (cv == "javascript") {
-        return new cardComp(response.data.articles[cv], "javascript");
-      }
-      if (cv == "bootstrap") {
-        return new cardComp(response.data.articles[cv], "bootstrap");
-      }
-      if (cv == "technology") {
-        return new cardComp(response.data.articles[cv], "technology");
-      }
-      if (cv == "jquery") {
-        return new cardComp(response.data.articles[cv], "jquery");
-      }
-      if (cv == "node") {
-        return new cardComp(response.data.articles[cv], "node");
-      }
+        return new cardComp(response.data.articles[cv], cv);
     });
   })
   .catch(error => {
